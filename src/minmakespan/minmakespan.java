@@ -156,8 +156,13 @@ public class minmakespan {
 		}
 		return machines;
 	}
-	
+
 	public static float[] LPT(int m, int n, float[] tasks) {
+		float[] machines = new float[m];
+		Arrays.fill(machines, 0);
+		return LPT(m, n, tasks, machines);
+	}
+	public static float[] LPT(int m, int n, float[] tasks, float[] machines) {
 		float[] sortedTasks = tasks;
 		for(int i = 0; i < tasks.length; i++) {
 			for(int j = i+1; j < tasks.length; j++) {
@@ -168,7 +173,7 @@ public class minmakespan {
 				}
 			}
 		}
-		return LSA(m, n, sortedTasks);
+		return LSA(m, n, sortedTasks, machines);
 	}
 	
 	public static float[] myAlgo(int m, int n, float[] tasks) {
@@ -198,7 +203,7 @@ public class minmakespan {
 			}
 		}
 		
-		return LSA(m, remainingTasks, lastTasks, machines);
+		return LPT(m, remainingTasks, lastTasks, machines);
 	}
 	
 	public static float[][] doAlgos(int m, int n, float[] tasks) {
