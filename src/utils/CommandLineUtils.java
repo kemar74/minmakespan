@@ -9,7 +9,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import org.apache.commons.lang3.ArrayUtils;
 
 public class CommandLineUtils {
 
@@ -31,10 +30,10 @@ public class CommandLineUtils {
 			float number = input.nextFloat();
 			boolean ok = false;
 			if(number > maxValue) {
-				System.out.println("Merci de donner une réponse inférieure à " + maxValue);
+				System.out.println("Merci de donner une reponse inferieure a " + maxValue);
 			}
 			else if(number < minValue) {
-				System.out.println("Merci de donner une réponse supérieure à " + minValue);
+				System.out.println("Merci de donner une reponse superieure a " + minValue);
 			}
 			else {
 				ok = true;
@@ -44,7 +43,7 @@ public class CommandLineUtils {
 				return number;
 			return numericInput("", maxValue, minValue);
 		} catch (InputMismatchException e) {
-			System.out.println("Merci de donner une réponse numérique");
+			System.out.println("Merci de donner une reponse numerique");
 			return numericInput("", maxValue, minValue);
 		}
 	}
@@ -87,9 +86,22 @@ public class CommandLineUtils {
 				
 			}
 		}
-		float[] floatArray = ArrayUtils.toPrimitive(options.toArray(new Float[0]), 0.0F);
+		float[] floatArray = CommandLineUtils.toPrimitive(options.toArray(new Float[0]), 0.0F);
 		return floatArray;
 	}
+	public static float[] toPrimitive(final Float[] array, final float valueForNull) {
+        if (array == null) {
+            return null;
+        } else if (array.length == 0) {
+            return new float[0];
+        }
+        final float[] result = new float[array.length];
+        for (int i = 0; i < array.length; i++) {
+            final Float b = array[i];
+            result[i] = (b == null ? valueForNull : b.floatValue());
+        }
+        return result;
+    }
 
 	public static List<String> readFileInList(String fileName) throws IOException 
 	{ 

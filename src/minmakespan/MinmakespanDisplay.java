@@ -23,16 +23,16 @@ public class MinmakespanDisplay {
 		float ratioLPT = maxLPT / max(borneMax, borneMean);
 		float ratioMyAlgo = maxMyAlgo / max(borneMax, borneMean);
 
-		output += "Borne inférieure ``maximum'' = " + borneMax + "\n";
-		output += "Borne inférieure ``moyenne'' = " + borneMean + "\n";
+		output += "Borne inferieure ``maximum'' = " + borneMax + "\n";
+		output += "Borne inferieure ``moyenne'' = " + borneMean + "\n";
 		
-		output += "Résultat LSA = " + maxLSA + "\n";
+		output += "Resultat LSA = " + maxLSA + "\n";
 		output += "ratio LSA = " + ratioLSA + "\n";
 		
-		output += "Résultat LPT = " + maxLPT + "\n";
+		output += "Resultat LPT = " + maxLPT + "\n";
 		output += "ratio LPT = " + ratioLPT + "\n";
 		
-		output += "Résultat myAlgo = " + maxMyAlgo + "\n";
+		output += "Resultat myAlgo = " + maxMyAlgo + "\n";
 		output += "ratio MyAlgo = " + ratioMyAlgo + "\n";
 		return output;
 	}
@@ -74,7 +74,7 @@ public class MinmakespanDisplay {
 				+ "=======================================\n"
 				+ "-- Aide a l'utilisation du programme --\n"
 				+ "=======================================\n"
-				+ "Objectif : Calculer une durée minimale pour l'execution de N taches sur M machines\n"
+				+ "Objectif : Calculer une duree minimale pour l'execution de N taches sur M machines\n"
 				+ "Auteurs : VENTE Maxime et HARTLEY Marc\n"
 				+ "Usage: \n"
 				+ "  Classique   : minmakespan <options>\n"
@@ -90,7 +90,7 @@ public class MinmakespanDisplay {
 				+ "  -k -iter -iterations\t: nombre d'iterations a executer\n"
 				+ "  -min\t\t\t: duree minimale d'une tache\n"
 				+ "  -max\t\t\t: duree maximale d'une tache\n"
-				+ "  -random -r\t\t: utilisation du mode aléatoire\n"
+				+ "  -random -r\t\t: utilisation du mode aleatoire\n"
 				+ "  -f -fichier\t\t: chemin vers le fichier utilise pour appliquer les calculs\n"
 				+ "  -i -interactive\t: mode interactif utilise\n"
 				+ "  -Im\t\t\t: utilisation d'une instance type Im\n"
@@ -104,8 +104,8 @@ public class MinmakespanDisplay {
 		System.out.println("");
 		System.out.println("1. Donner l'instance depuis un fichier");
 		System.out.println("2. Donner l'instance depuis le clavier");
-		System.out.println("3. Générer une instance de type Im");
-		System.out.println("4. Générer des instances aléatoires");
+		System.out.println("3. Generer une instance de type Im");
+		System.out.println("4. Generer des instances aleatoires");
 		System.out.println("5. Quitter");
 		
 		int choix = (int) numericInput("Faites votre choix", 5, 1);

@@ -236,9 +236,9 @@ public class minmakespan {
 	public static ArrayList< ArrayList<Float> > getRandom() {
 		int m = (int) numericInput("Nombre de machines :");
 		int n = (int) numericInput("Nombre de taches :");
-		int k = (int) numericInput("Nombre d'itérations :");
-		float min = numericInput("Durée minimale d'une tache :");
-		float max = numericInput("Durée maximale d'une tache :");
+		int k = (int) numericInput("Nombre d'iterations :");
+		float min = numericInput("Duree minimale d'une tache :");
+		float max = numericInput("Duree maximale d'une tache :");
 		return doRandom(m, n, k, min, max);
 	}
 	public static ArrayList<Float> doIm(int m) {
@@ -300,7 +300,7 @@ public class minmakespan {
 		int n = Integer.parseInt(datas[1]);
 		
 		if(datas.length != n+2) {
-			System.out.println("Le format de la chaine est incorrect : " + n + " taches demandées mais seulement " + (datas.length -2) + " recues...");
+			System.out.println("Le format de la chaine est incorrect : " + n + " taches demandees mais seulement " + (datas.length -2) + " recues...");
 			return null;
 		}
 		returns.add((float) m);
