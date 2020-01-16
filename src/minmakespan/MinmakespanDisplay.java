@@ -70,6 +70,9 @@ public class MinmakespanDisplay {
 	}
 
 	public static void displayHelp() {
+		StackTraceElement[] stack = Thread.currentThread ().getStackTrace ();
+	    StackTraceElement main = stack[stack.length - 1];
+	    String mainClass = main.getClassName ();
 		System.out.println(""
 				+ "=======================================\n"
 				+ "-- Aide a l'utilisation du programme --\n"
@@ -77,12 +80,12 @@ public class MinmakespanDisplay {
 				+ "Objectif : Calculer une duree minimale pour l'execution de N taches sur M machines\n"
 				+ "Auteurs : VENTE Maxime et HARTLEY Marc\n"
 				+ "Usage: \n"
-				+ "  Classique   : minmakespan <options>\n"
-				+ "  Random      : minmakespan -random <-m=M> <-n=N> <-k=K> <-min=MIN> <-max=MAX>\n"
-				+ "  Interactive : minmakespan -i\n"
-				+ "  Fichier     : minmakespan <-fichier=CHEMIN>\n"
-				+ "  Im-type     : minmakespan -Im <-m=M>\n"
-				+ "  Aide        : minmakespan -h\n"
+				+ "  Classique   : java " + mainClass + " <options>\n"
+				+ "  Random      : java " + mainClass + " -random <-m=M> <-n=N> <-k=K> <-min=MIN> <-max=MAX>\n"
+				+ "  Interactive : java " + mainClass + " -i\n"
+				+ "  Fichier     : java " + mainClass + " <-fichier=CHEMIN>\n"
+				+ "  Im-type     : java " + mainClass + " -Im <-m=M>\n"
+				+ "  Aide        : java " + mainClass + " -h\n"
 				+ "Options possible :\n"
 				+ "  -h -help\t\t: Affiche cette page d'aide\n"
 				+ "  -m -machines\t\t: nombre de machines a utiliser\n"

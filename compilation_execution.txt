@@ -9,4 +9,4 @@ Pour exécuter le programme (toujours dans le dossier « bin »), la commande st
 > java minmakespan.minmakespan
 
 Plusieurs options sont disponibles en ajoutant un mot clé avant le nom du fichier. La liste des options est disponible avec la commande :
-> java --help minmakespan
+> java -help minmakespan

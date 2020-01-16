@@ -184,10 +184,17 @@ public class minmakespan {
 		
 		float[] machines = new float[m];
 		Arrays.fill(machines, 0);
+		Arrays.sort(tasks);
+		
+		float[] tmp = new float[n];
+		for(int i = 0; i < tmp.length; i++) {
+			tmp[i] = tasks[tasks.length - i - 1];
+		}
+		tasks = tmp;
 		
 		for(int iM = 0; iM < m; iM++) {
 			for(int iT = 0; iT < n; iT++) {
-				if(!used[iT] && machines[iM] + tasks[iT] < mean) {
+				if(!used[iT] && machines[iM] + tasks[iT] <= mean) {
 					machines[iM] += tasks[iT];
 					used[iT] = true;
 					remainingTasks --;
@@ -202,7 +209,6 @@ public class minmakespan {
 				index ++;
 			}
 		}
-		
 		return LPT(m, remainingTasks, lastTasks, machines);
 	}
 	
